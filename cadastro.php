@@ -53,66 +53,39 @@ require_once("cabecalho.php");
 require_once("rodape.php");
 ?>
 <script type="text/javascript">
+$("form").submit(function(evt){
 
-$(document).ready(function(){
-
-	if($("#m").val() != ""){
-
-		$("<div>").addClass("alert alert-success").attr("role","alert").append(
-			$("<a>").attr({"href":"#","class":"alert-link"}).append(
-				$("<span>").addClass("message").append("Cadastrado com sucesso")
-			)
-		).insertAfter("h3");
-
+	if ($("#nome").val() == ""){
+		evt.preventDefault();
+		message("Preencher o nome");
 	}
-
-	// vAlert($(".alert-link").data("alerta"));
-
+	if ($("#sobrenome").val() == ""){
+		evt.preventDefault();
+		message("Preencher o sobrenome");
+	}
+	if ($("#email").val() == ""){
+		evt.preventDefault();
+		message("Preencher o email");
+	}
+	if ($("#senha").val() == ""){
+		evt.preventDefault();
+		message("Preencher a senha");
+	}
+	if ($("#confirma_senha").val() == "") {
+		evt.preventDefault();
+		message("Confirme a senha");
+	};	
 });
 
-function debug(){
+var message = function(obj){
 
-	alert(
-		"Nome: "+$("#nome").val()+"\n"+
-		"Sobrenome: "+$("#sobrenome").val()+"\n"+
-		"Email: "+$("#email").val()+"\n"+
-		"Senha: "+$("#senha").val()+"\n"+
-		"Senha**: "+$("#confirma_senha").val()
-	);
+	var mensagem = obj;
 
-}
-
-function vAlert(obj){
-
-	var message = "";
-
-	switch(obj){
-		case "1":
-			message = "Esqueceu de preencher seu nome";
-			break;
-		case "2":
-			message = "Esqueceu de preencher seu sobrenome";
-			break;
-		case "3":
-			message = "Esqueceu de preencher seu email";
-			break;
-		case "4":
-			message = "Esqueceu de preencher sua senha";
-			break;
-		case "5":
-			message = "Esqueceu de preencher o campo de confirmar a senha";
-			break;
-		default:
-			message = "";
-	}
-	
-	if(obj != "0"){
-		$(".alert").show();
-		$(".alert-link").append(
-			message
+	$("<div>").addClass("alert alert-danger").attr("role","alert").append(
+		$("<a>").attr({"href":"#","class":"alert-link"}).append(
+			$("<span>").addClass("message").append(mensagem)
 		)
-	}
-
+	).insertAfter("h3");
 }
 
 </script>

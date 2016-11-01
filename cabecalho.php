@@ -2,9 +2,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Filmes</title>
-	<link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css" />
+	<title>MovieHint</title>
 	<link rel="stylesheet" href="../library/jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.min.css" />
+	<link rel="stylesheet" type="text/css" href="../library/bootstrap/css/bootstrap.min.css" />
 	<style>
 
 		@font-face{
@@ -13,12 +13,14 @@
 		}
 
 		.nav{
-			padding-top: 5px;
+			padding-top: 15px;
+			padding-bottom: 5px;
 			/*border-bottom: 1px solid #5a5a5a;*/
 			background-color: #fff;
 			position: fixed;
 			width: 100%;
 			box-shadow: 2px 3px 30px #5A5A5A;
+			z-index: 999999;
 		}
 
 		.nav a {
@@ -40,10 +42,6 @@
 		.principal {
 			padding-top: 80px;
 		}
-
-		.jumbotron {
-  			background-color: #023968;
-		}
 	</style>
 </head>
 <body>
@@ -51,14 +49,12 @@
 		<!-- <div class="container"> -->
 			<ul class="pull-left">
 				<!-- <li><img src="imagens/logo.jpg" alt="logo" id="logo"></li> -->
-				<li><a href="index.php">Home</a></li>
+				<li><a href="principal.php">Home</a></li>
 				<li><a href="generos.php">Filmes</a></li>
 			</ul>
 			<ul class="pull-right">
-				<li><a href="cadastro.php">Sign Up</a></li>
-				<li><a href="login.php">Login</a></li>
-				<li><a href="#">Perfil</a></li>
-				<li><a href="#">Configurações</a></li>
+				<li><a href="perfil.php"><span class="glyphicon glyphicon-user" aria-hidden="true" title="Editar perfil"></span></a></li>
+				<li><a href="logout.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true" title="Logout" id="logout"></span></a></li>
 	   	</ul>
 		<!-- </div> -->
 	</div>

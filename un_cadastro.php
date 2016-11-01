@@ -18,9 +18,9 @@ $sql = "insert into usuario
 ";
 
 if(mysqli_query($conexao, $sql)){
-	$m="1";
+	$m = "1";
 }else{
-	$m="";
+	$m = "";
 };
 
 header("Location: login.php?m=".$m);
